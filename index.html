@@ -18,7 +18,7 @@
   h1{
     margin-top:15px;
     color:#8dcce0;
-    font-size:2rem;
+    font-size:1rem;
     padding:0 10px;
   }
 
@@ -34,20 +34,20 @@
     text-align:center;
   }
 
-  /* galeria responsiva */
+  /* galeria responsiva centralizada */
   .gallery{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    justify-items:center;
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
     gap:10px;
     margin:15px auto 25px;
   }
 
   .gallery img{
-    width:100%;
-    max-width:150px;
-    height:150px;
-    object-fit:cover;
+    width: calc(18%);
+    min-width: 80px;
+    max-width: 150px;
+    height: auto;
     border-radius:12px;
     box-shadow:0 4px 18px rgba(255,255,255,0.25);
     transition: transform 0.3s ease;
@@ -93,13 +93,13 @@
   @media(max-width:700px){
     h1{ font-size:1.6rem; }
     #message{ font-size:0.95rem; padding:10px 10px; }
-    .gallery img{ max-width:120px; height:120px; }
+    .gallery img{ width: 30%; max-width: 120px; }
   }
 
   @media(max-width:500px){
     h1{ font-size:1.4rem; }
     #message{ font-size:0.9rem; padding:8px 8px; }
-    .gallery img{ max-width:100px; height:100px; }
+    .gallery img{ width: 45%; max-width: 100px; margin-bottom:10px; }
   }
 </style>
 </head>
