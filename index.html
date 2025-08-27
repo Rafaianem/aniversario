@@ -34,21 +34,25 @@
     text-align:center;
   }
 
+  /* galeria responsiva */
   .gallery{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    justify-items:center;
     gap:10px;
     margin:15px auto 25px;
   }
+
   .gallery img{
-    max-height:calc(20vh + 60px); /* fotos grandes e proporcionais */
-    width:auto;
+    width:100%;
+    max-width:150px;
+    height:150px;
+    object-fit:cover;
     border-radius:12px;
-    padding:3px;
     box-shadow:0 4px 18px rgba(255,255,255,0.25);
     transition: transform 0.3s ease;
   }
+
   .gallery img:hover{
     transform: scale(1.05);
   }
@@ -89,13 +93,13 @@
   @media(max-width:700px){
     h1{ font-size:1.6rem; }
     #message{ font-size:0.95rem; padding:10px 10px; }
-    .gallery img{ max-height:120px; }
+    .gallery img{ max-width:120px; height:120px; }
   }
 
   @media(max-width:500px){
     h1{ font-size:1.4rem; }
     #message{ font-size:0.9rem; padding:8px 8px; }
-    .gallery img{ max-height:100px; width:45%; }
+    .gallery img{ max-width:100px; height:100px; }
   }
 </style>
 </head>
